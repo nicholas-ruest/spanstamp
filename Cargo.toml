@@ -1,0 +1,29 @@
+[package]
+name = "spanstamp"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+description = "Durable, content-addressed review anchors for Markdown"
+license = "MIT"
+repository = "https://github.com/nicholas-ruest/spanstamp"
+readme = "README.md"
+keywords = ["markdown", "review", "source-map", "cli"]
+categories = ["command-line-utilities", "development-tools"]
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4.5", features = ["derive"] }
+pulldown-cmark = "0.12"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+thiserror = "2.0"
+
+[dev-dependencies]
+assert_cmd = "2.0"
+predicates = "3.1"
+tempfile = "3.14"
+
+[profile.release]
+strip = true
+lto = "thin"
